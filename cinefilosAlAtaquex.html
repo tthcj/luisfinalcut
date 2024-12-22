@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: orangered;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #8B0000, #90EE90); /* degradado */
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        header h4 {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px; /* Ancho máximo del contenedor */
+        }
+
+        .video-container iframe {
+            width: 560px; /* Ancho original del iframe */
+            height: 315px; /* Alto original del iframe */
+            border: none;
+        }
+
+        .video-container h1 {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(to right, #b22222, #90ee90);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: darkorange;
+        }
+
+        /* pantallas pequeñas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header h4 {
+                font-size: 12px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .social-icons a {
+                font-size: 1.2em;
+            }
+
+            .video-container iframe {
+                width: 100%; /* El iframe ocupará el 100% del contenedor */
+                height: auto; /* Mantiene la proporción */
+            }
+
+            .video-container h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* pantallas más grandes */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header h4 {
+                font-size: 14px;
+            }
+
+            .social-icons a {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+
+    <title>Cine ... cine ... cine ...</title>
+</head>
+<body>
+
+    <header>
+        <h1>Cinelandia</h1>
+        <h4>[el site de cine más minimalista y disruptivo de la red]</h4>
+    </header>
+
+    <main>
+        <a href="index.html" style="font-size: 20px; color: white"><b>volver</b></a>
+        <br><br>
+
+        <div class="video-container">
+            <h1>Historia del Cine</h1>
+            <iframe src="https://www.youtube.com/embed/LNorpMtgaVY?si=C9aWGoCMZjyOA9D2" title="Historia del Cine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+            <h1>Historia del Cine Argentino</h1>
+            <iframe src="https://www.youtube.com/embed/vJSmIjXTHsY?si=M3OdBceX6GPT9UM0" title="Historia del Cine Argentino" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+            <h1>Disfruta del Cine</h1>
+            <iframe src="https://www.youtube.com/embed/Ls6eEN9uXS0?si=CraR6H0NMBf-E7Vd" title="Disfruta del Cine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2024 Cinelandia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+

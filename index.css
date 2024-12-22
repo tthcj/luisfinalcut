@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding : 0;
+}
+
+header {
+    text-align: center;
+    margin: 20px;
+    background: linear-gradient(to right, #b22222, #90ee90);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #003366;
+    transition: color 0.3s; /* Efecto hover */
+}
+
+nav a:hover {
+    color: darkorange; /* Cambia el color al hacer hover */
+}
+
+body {
+    /* width: 90%;
+    max-width: 1000px;
+    margin: 0 auto; */
+    font-family: 'Roboto', sans-serif;
+    background-color: orangered;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: 
+        "header  header header"
+        "sidebar c1     c2"
+        "sidebar c3     c4"
+        "footer footer footer";
+    gap: 10px; /* Espacio entre los elementos */
+    /* font-size: clamp(1rem, 3vw, 2rem); */
+    /* height: 100vh; */
+    margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main, .container{
+    display: contents;
+}
+aside {
+    grid-area: sidebar;
+    margin-left: 20px;
+    padding: 10px;
+    min-width: 300px;
+    background-color: #f3f3f3f0;
+    border-radius: 5px;
+    border: 5px solid violet;
+}
+
+a img {
+    transition: all 0.3s ease; /* Animación suave para el cambio */
+}
+
+a img:hover {
+    
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen ligeramente */
+}
+
+
+/* Agregar estilo para agrandar el textarea */
+#contactForm textarea {
+    width: 80%;  /* Ocupa todo el ancho del formulario */
+    height: 100px; /* Ajusta la altura según lo que necesites */
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    padding: 10px; /* Añade algo de espacio dentro del textarea */
+    border-radius: 5px; /* Añade bordes redondeados */
+    border: 1px solid #ccc; /* Color de borde */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+/* Agregar estilo para agrandar el area del input */
+#contactForm input[type="email"] {
+    width: 80%; /* Ocupa todo el ancho del formulario */
+    height: 30px; /* Ajusta la altura del campo */
+    padding: 10px; /* Añade espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Color de borde */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+section {
+    background-color: #f3f3f3f0;
+    border: 5px solid violet;
+    padding: 10px;
+    margin-right: 20px; 
+    border-radius: 5px;
+}
+
+.btn-animate {
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-animate:hover {
+    background-color: darkorange;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+.c3 {
+    grid-area: c3;
+}
+
+.c4 {
+    grid-area: c4;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+footer {
+    grid-area: footer;
+    background: linear-gradient(to right, #b22222, #90ee90);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: darkorange;
+}
+
+/*Contador Logo*/
+#contador {
+    font-size: 80px;
+    color: orangered;
+    margin-left: 20px;
+}
+
+
+
+/* Media query para pantallas menores a 768px */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: auto; /* Ajustar las filas automáticamente */
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "c1"
+            "c2"
+            "c3"
+            "c4"
+            "footer";
+    }
+
+    aside {
+        grid-area: sidebar;
+    }
+
+    .c1 {
+        grid-area: c1;
+    }
+
+    .c2 {
+        grid-area: c2;
+    }
+    .c3 {
+        grid-area: c3;
+    }
+
+    .c4 {
+        grid-area: c4
+    }
+}

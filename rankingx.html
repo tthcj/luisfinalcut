@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type = "image/x-icon" href="logo-cine.svg">
+    
+    <title>Ranking</title>
+    <style>
+        * {
+            margin: 2px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: orangered;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #8B0000, #90EE90);
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        header h4 {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: contain; /* Mostrar la imagen completa */
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            grid-area: footer;
+            background: linear-gradient(to right, #b22222, #90ee90);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: darkorange;
+        }
+
+        @media (max-width: 768px) {
+            img {
+                width: 250px;
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            img {
+                width: 220px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cinelandia</h1>
+        <h4>[el site de cine más minimalista y disruptivo de la red]</h4>
+    </header>
+    <main>
+        <a href="index.html" style="font-size: 20px; color: white;"><b>volver</b></a>
+        <br><br>
+        <h2>Selecciona tu película (clic) y danos tu opinión [1-10]</h2>
+        <br><br>
+        <div class="image-container">
+            <img src="imagen1.jpg" alt="La delgada línea roja" onclick="seleccionarImagen('imagen1', 'La delgada línea roja')">
+            <img src="imagen2.jpg" alt="El francotirador" onclick="seleccionarImagen('imagen2', 'El francotirador')">
+            <img src="imagen3.jpg" alt="Un mundo perfecto" onclick="seleccionarImagen('imagen3', 'Un mundo perfecto')">
+        </div>
+
+        <div id="puntuacion-section" display: none;>
+            <label for="puntuacion" style="font-weight: bold;">Ingresa una puntuación (1 a 10): </label>
+            <input type="number" id="puntuacion" min="1" max="10">
+            <button onclick="guardarPuntuacion()" style="font-weight: bold; background-color: gray; color:white">Guardar Puntuación</button>
+        </div>
+
+        <div id="resultado-section" style="margin-top: 20px;">
+            <h3 style="font-size: 25px;">Promedios:</h3>
+            <p id="promedio1" style="font-size: 30px;">La delgada línea roja: -</p>
+            <p id="promedio2" style="font-size: 30px;">El francotirador: -</p>
+            <p id="promedio3" style="font-size: 30px;">Un mundo perfecto: -</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2024 Cinelandia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        let imagenSeleccionada = '';
+        let nombrePelicula = '';
+
+        function seleccionarImagen(nombreImagen, pelicula) {
+            imagenSeleccionada = nombreImagen;
+            nombrePelicula = pelicula;
+            document.getElementById('puntuacion-section').style.display = 'block';
+            document.getElementById('puntuacion').value = '';
+        }
+
+        function guardarPuntuacion() {
+            let puntuacion = document.getElementById('puntuacion').value;
+            if (puntuacion >= 1 && puntuacion <= 10) {
+                let calificaciones = JSON.parse(localStorage.getItem('calificaciones')) || {};
+
+                if (calificaciones[imagenSeleccionada]) {
+                    calificaciones[imagenSeleccionada].push(Number(puntuacion));
+                } else {
+                    calificaciones[imagenSeleccionada] = [Number(puntuacion)];
+                }
+
+                localStorage.setItem('calificaciones', JSON.stringify(calificaciones));
+
+                mostrarPromedios();
+                document.getElementById('puntuacion-section').style.display = 'none';
+            } else {
+                alert('Por favor, ingresa una puntuación válida entre 1 y 10.');
+            }
+        }
+
+        function mostrarPromedios() {
+            let calificaciones = JSON.parse(localStorage.getItem('calificaciones')) || {};
+            let promedio1 = calcularPromedio(calificaciones['imagen1']);
+            let promedio2 = calcularPromedio(calificaciones['imagen2']);
+            let promedio3 = calcularPromedio(calificaciones['imagen3']);
+
+            document.getElementById('promedio1').innerText = 'La delgada línea roja: ' + (promedio1 !== null ? promedio1.toFixed(2) : '-');
+            document.getElementById('promedio2').innerText = 'El francotirador: ' + (promedio2 !== null ? promedio2.toFixed(2) : '-');
+            document.getElementById('promedio3').innerText = 'Un mundo perfecto: ' + (promedio3 !== null ? promedio3.toFixed(2) : '-');
+        }
+
+        function calcularPromedio(puntuaciones) {
+            if (!puntuaciones || puntuaciones.length === 0) {
+                return null;
+            }
+            let suma = puntuaciones.reduce((a, b) => a + b, 0);
+            return suma / puntuaciones.length;
+        }
+
+        window.onload = mostrarPromedios;
+    </script>
+</body>
+</html>
+
+
+
+
+

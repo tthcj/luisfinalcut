@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="Light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css10.css">
+    <title>Películas</title>
+</head>
+<body>
+    <header>
+        <h1>Cinelandia</h1>
+        <h4>[el site de cine más minimalista y disruptivo de la red]</h4> 
+    </header>
+    <a href="index.html" style="font-size: 20px; color: white;margin: 20px;text-decoration:none;"><b>volver</b></a>
+    <br>
+    <div class="container">
+        <h1>Películas</h1>
+        <form>
+            <label for="page">Página</label>     
+            <select id="page">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="rating">Valoración</label>  <!-- Cambié idioma por valoración -->
+            <select id="rating">
+                <option value="mala">Mala</option>
+                <option value="regular">Regular</option>
+                <option value="buena">Buena</option>
+                <option value="muybuena">Muy buena</option>
+            </select>
+            <button type="submit">Buscar películas</button>
+        </form>
+        <h2>Resultados</h2>
+        <pre id="results" style="background: #f4f4f4; padding: 1em; border-radius: 5px;"></pre>
+    </div>
+    <script src="app10.js"></script>
+</body>
+</html>

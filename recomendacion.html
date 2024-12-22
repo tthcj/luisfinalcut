@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Recomendamos tu Película</title>
+    <style>
+        *{
+            margin: 2px;
+            
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: orangered;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #8B0000, #90EE90); /* degradado */
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        header h4 {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        footer {
+            grid-area: footer;
+            background: linear-gradient(to right, #b22222, #90ee90);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cinelandia</h1>
+        <h4>[el site de cine más minimalista y disruptivo de la red]</h4>
+    </header>
+    <main>
+        <a href="index.html" style = "font-size : 20px; color: white"><b>volver</b></a>
+        <br><br>
+        <form id="formulario">
+            <fieldset>
+                <legend style="font-size: 25px;">Te va a gustar...</legend>
+
+                <label for="categoria">Género:</label>
+                <select id="categoria">
+                    <option value="comedia">Comedia</option>
+                    <option value="drama">Drama</option>
+                    <option value="documental">Documental</option>
+                </select>
+
+                <label for="actor">Actor/a:</label>
+                <input type="text" id="actor" name="actor">
+
+                <label for="director">Director/a:</label>
+                <input type="text" id="director" name="director">
+
+                <label for="anio">Año de filmación:</label>
+                <input type="number" id="anio" name="anio">
+
+                <label for="idioma">Idioma:</label>
+                <input type="text" id="idioma" name="idioma">
+
+                <label for="pais">País de producción:</label>
+                <input type="text" id="pais" name="pais">
+
+                <label for="puntuaciones">Puntuaciones:</label>
+                <input type="number" id="puntuaciones" name="puntuaciones">
+
+                <label for="premios">Premios:</label>
+                <input type="text" id="premios" name="premios">
+
+                <label for="publico">Tipo de público:</label>
+                <input type="text" id="publico" name="publico">
+
+                <button type="button" id="recomendarBtn">Recomendar Película</button>
+            </fieldset>
+        </form>
+
+        <p id="resultado"></p>
+    </main>
+    <footer>
+        <div class="footer-content">
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2024 Cinelandia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        const peliculas = {
+            comedia: ["Annie Hall", "Arsénico por compasión", "Charada", "La fiesta inolvidable", "El joven Frankenstein"],
+            drama: ["El padrino", "Cadena perpetua", "Los siete samurais", "Casablanca", "Atrapado sin salida"],
+            documental: ["Trece entre mil", "Ser y tener", "Fraude", "Bowling for Columbine", "Por qué luchamos"]
+        };
+        
+        document.getElementById('recomendarBtn').addEventListener('click', function() {
+            const categoria = document.getElementById('categoria').value;
+            const seleccion = peliculas[categoria];
+        
+            if (seleccion) {
+                const peliculaAleatoria = seleccion[Math.floor(Math.random() * seleccion.length)];
+                document.getElementById('resultado').textContent = `Película recomendada: ${peliculaAleatoria}`;
+            } else {
+                document.getElementById('resultado').textContent = 'No se encontró una película para esa categoría.';
+            }
+        });
+    </script>
+</body>
+</html>

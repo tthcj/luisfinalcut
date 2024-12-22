@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type = "image/x-icon" href="logo-cine.jpg">
+
+    <title>Talento Tech Luis Fernando Aranguren</title>
+</head>
+<body>
+
+    <header>
+        <h1>Cinelandia</h1>
+        <h4>[el site de cine más minimalista y disruptivo de la red]</h4>
+        <nav>
+            <!-- <a href="#ataque" style="font-weight: 900;">al ataque</a>
+            <a href="#ultimo" style="font-weight: 900;">lo último</a> -->
+            <a href="#servicios" style="font-weight: 900;">servicios</a>
+            <a href="#contactForm" style="font-weight: 900;">opinión</a>
+            <a href="#estamos" style="font-weight: 900;">aquí estamos</a>
+            <a href="carrito2.html" style="font-weight: 900;">merchandising</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <h2 style = "color:orangered">Próximamente</h2>
+                
+            <article>
+                <p><i class="fas fa-video"></i> <span style="font-weight: bold;">Votá</span> si te gusta nuestro nuevo logo, haz clic sobre la imagen ... </p>
+                <a href="javascript:void(0);" onclick="incrementarContador()">
+                    <img src="logo-cine.jpg" style="width: 100px; height: auto;" alt="Logo del cine">
+                </a>
+                <!-- Aquí se mostrará el contador -->
+                <span id="contador"></span>
+            </article>
+                <br>
+                <article>
+                <p><i class="fas fa-video"></i> <span style="font-weight: bold;">Llevamos el cine</span> a tu barrio, sociedad de fomento, club social ...</p>
+                
+                <p>Estamos ansiosos de llevar el cine a todas partes y de hacer feliz a la gente.</p>
+                </article>
+                <br>
+                <article>
+                <p><i class="fas fa-video"></i> Querés ser <span style="font-weight: bold;">crítico amateur de cine</span> ... no te desesperes</p>
+                <p>Muy pronto abriremos nuestro primer curso presencial en nuestra sede de Avda Asamblea 912.</p>
+                
+                </article>
+                <br>
+                <article>
+                <p><i class="fas fa-video"></i> No pertenecés a ningún <span style="font-weight: bold;">cine club</span>?</p>
+                <p>Pronto tendrás la posibilidad de asociarte al mejor.</p>
+                </article>
+                
+                <h2 style = "color:orangered">Tu opinión cuenta ...</h2>
+                
+                <form id="contactForm" action="https://formspree.io/f/xzzbpwrz" method="POST">
+                    <label>
+                        Email:
+                        <input type="email" name="email" required>
+                    </label>
+                    <br><br>
+                                        
+                    <label>
+                        Película-Opinión (no olvides el -):
+                        <textarea name="message" required></textarea>
+                    </label>
+                    <br><br>
+                    <button class="btn-animate" type="submit">Enviar</button>
+                    <button class="btn-animate" type="button" onclick="limpiarContacto()">Limpiar</button> <!-- Nuevo botón para limpiar -->
+                </form>
+                <br>
+                <h2 style = "color:orangered">Ver comentarios ...</h2>
+                <br>
+                <button class="btn-animate" onclick="window.location.href='index5.html'">Animate</button>
+        </aside>
+        <div class="container">
+            <section class="c1 box" id="ataque">
+                <h2 style="color: orangered">Cinéfilos al ataque !!!</h2>
+                <br>
+                <p>Nuestra <span style="font-weight: bold">pasión por el cine </span>se derrama, no tiene fronteras.</p>
+                <p>Ayúdanos a expandirlas</p>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> HISTORIA VISUAL DE LA INDUSTRIA</h3>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> BREVE HISTORIA VISUAL DEL CINE ARGENTINO</h3>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> LAS VENTAJAS DE VER CINE</h3>
+                <br><br><br>
+                <button class="btn-animate" onclick="window.location.href='cinefilosAlAtaquex.html'">Animate</button>
+            </section>
+
+            <section class="c2 box" id="ultimo">
+                <h2 style="color: orangered">Lo último de la industria</h2>
+                <p>Si no está en este sitio <span style="font-weight: bold">es porque no sucedió ...</span></p>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> NOVEDADES NACIONALES + INTERNACIONALES</h3>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> ESTRENOS + PRODUCCIONES INDEPENDIENTES</h3>
+                <br><br>
+                <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> PROYECTOS + PREPRODUCCIÓN + POSTPRODUCCIÓN</h3>
+                <br><br>
+                <!-- <h3 style="color:rgb(57, 225, 24);"><i class="fas fa-video"></i> CINE + INTELIGENCIA ARTIFICIAL </h3> -->
+                <h3 style="color:rgb(57, 225, 24);">
+                    <i class="fas fa-video"></i> CINE + INTELIGENCIA ARTIFICIAL 
+                    <a href="./ia/indexx.html" style="color: red; text-decoration: none;">HACE CLICK AQUÍ</a>
+                </h3>
+                
+                <br><br>
+                <!-- <button class="btn-animate" onclick="window.location.href='https://www.sensacine.com/peliculas/noticias/'">Animate</button> -->
+                <!-- <button class="btn-animate" onclick="window.open('https://www.sensacine.com/peliculas/noticias/', '_blank')">Animate</button> -->
+                <button class="btn-animate" onclick="window.open('https://www.sensacine.com/peliculas/noticias/', '_blank', 'width=800,height=600,left=200,top=100')">Animate</button>
+
+            </section>
+            <section class="c3 box" id="servicios">
+                <h2 style="color: orangered">Nuestros Servicios</h2>
+                <br>
+                <h3><i class="fas fa-video"></i> Vota tu película favorita</h3>
+                <p>Eso nos ayudará a alimentar a nuestra AI y tener nuestro propio ranking argento.</p>
+                <br>
+                <button class="btn-animate" onclick="window.location.href='rankingx.html'">Animate</button>
+                <br><br>
+                <h3><i class="fas fa-video"></i> AICINE</h3>
+                <p>Completando una serie de parámetros recomendamos tu película a tu medida</p>
+                <p>Cuanto más precisa sea la información que nos brindes, más acertada sera nuestra recomendación</p>
+                <br>
+                <button class="btn-animate" onclick="window.location.href='recomendacion.html'">Animate</button>
+                <br><br>
+                <h3><i class="fas fa-video"></i> SORPRESA !!!</h3>
+                <p>Selecciona tu próxima película ...</p>
+                <br>
+                <button class="btn-animate" onclick="window.location.href='index10.html'">Animate</button>
+            </section>
+
+            <section class="c4 box" id="estamos">
+                <h2 style="color: orangered">Somos de carne y hueso</h2>
+                        <br>
+                        <h3><i class="fas fa-video"></i> EnjoyMovies</h3>
+                                <p>Animamos tu Reunión Empresarial - de Amigos - Familiar | Evento | Fiesta.</p>
+                                <p>Date una vuelta por nuestro Showroom sito en Avda Asamblea 912, donde podrás apreciar lo último en entretenimientos referidos al sector.</p>
+                                <br>
+                        <div class="map-container">
+                            <iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.77505608962!2d-58.43996642459387!3d-34.635124372943125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd4d1d6c7a5f5%3A0x3e88b35ec1cdcbf7!2sAv.%20de%20Los%20Teléfonos%203512%2C%20C1408DFF%20CABA%2C%20Argentina!5e0!3m2!1ses!2sus!4v1696470170548!5m2!1ses!2sus" allowfullscreen="" loading="lazy"></iframe>
+                            
+                        </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2024 Cinelandia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function limpiarContacto() {
+            document.getElementById('contactForm').reset();
+        }
+
+         // Inicializa el contador en 0 si no existe en localStorage
+         if (localStorage.getItem('contador') === null) {
+            localStorage.setItem('contador', 0);
+        }
+
+        // Incrementar el contador
+        function incrementarContador() {
+            let contador = parseInt(localStorage.getItem('contador'));
+            contador++;  // Incrementa el contador
+            localStorage.setItem('contador', contador);  // Guarda el nuevo valor en localStorage
+            mostrarContador();  // Actualiza el contador visible
+        }
+
+        // Mostrar el contador
+        function mostrarContador() {
+            let contador = localStorage.getItem('contador');
+            document.getElementById('contador').textContent = contador;  // Mostrar el contador al lado de la imagen
+        }
+
+        // Al cargar la página --> muestra el contador actual
+        mostrarContador();
+    </script>
+</body>
+</html>
+

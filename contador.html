@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votá por el Logo</title>
+    <style>
+        #contador {
+            font-size: 40px;
+            color: orangered;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <p><i class="fas fa-video"></i> Votá si te gusta nuestro nuevo logo, haz clic sobre la imagen ... </p>
+        <a href="javascript:void(0);" onclick="incrementarContador()">
+            <img src="logo-cine.jpg" style="width: 100px; height: auto;" alt="Logo del cine">
+        </a>
+        <!-- Aquí se mostrará el contador -->
+        <span id="contador"></span>
+    </article>
+
+    <script>
+        // Inicializa el contador en 0 si no existe en localStorage
+        if (localStorage.getItem('contador') === null) {
+            localStorage.setItem('contador', 0);
+        }
+
+        // Función para incrementar el contador
+        function incrementarContador() {
+            let contador = parseInt(localStorage.getItem('contador'));
+            contador++;  // Incrementa el contador
+            localStorage.setItem('contador', contador);  // Guarda el nuevo valor en localStorage
+            mostrarContador();  // Actualiza el contador visible
+        }
+
+        // Función para mostrar el contador
+        function mostrarContador() {
+            let contador = localStorage.getItem('contador');
+            document.getElementById('contador').textContent = contador;  // Muestra el contador al lado de la imagen
+        }
+
+        // Al cargar la página, mostrar el contador actual
+        mostrarContador();
+    </script>
+</body>
+</html>

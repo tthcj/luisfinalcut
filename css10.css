@@ -1,0 +1,86 @@
+/* Fondo naranja para toda la página */
+html, body {
+    background-color: orangered;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: orangered;
+    color: white;
+    margin:10px;
+  }
+  header {
+      text-align: center;
+      margin: 20px;
+      background: linear-gradient(to right, #b22222, #90ee90);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+      font-family: "Roboto", 'Poppins', sans-serif;
+  }
+
+/* Estilo del contenedor de resultados */
+#results {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 1em; /* Espacio entre las tarjetas */
+    margin-top: 2em;
+    padding: 1em;
+}
+
+/* Estilo individual para las tarjetas de película */
+#results div {
+    background-color: white;
+    border: 2px solid pink;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1em;
+    width: 45%; /* Ajusta el ancho para mantener dos tarjetas por línea */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Imagen de la película */
+#results img {
+    width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    border-radius: 10px;
+    margin-bottom: 0.5em; /* Espacio entre la imagen y el contenido */
+}
+
+/* Título de la película */
+#results h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: orangered; /* Título destacado en color */
+}
+
+/* Voto promedio */
+#results p {
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+/* Reseña de la película */
+#results p + p {
+    font-style: italic;
+    max-height: 100px; /* Limita la altura de la reseña */
+    overflow: auto; /* Agrega un scroll vertical si la reseña es muy larga */
+    text-overflow: ellipsis; /* Corta el texto si es demasiado largo */
+    margin-top: 1em;
+    color: #333; /* Texto de la reseña en gris oscuro */
+    white-space: normal; /* Asegura que el texto se ajuste al ancho disponible */
+    word-wrap: break-word; /* Fuerza un salto de línea si una palabra es muy larga */
+}
+
+/* Ajuste responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #results div {
+        width: 90%; /* Aumenta el ancho a una tarjeta por fila en pantallas pequeñas */
+    }
+}
